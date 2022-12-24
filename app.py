@@ -50,9 +50,9 @@ def update(sno):
         return redirect('/')
 
     todo = Todo.query.filter_by(sno=sno).first()
-    return todo.title, todo.desc
+    return render_template('update.html', todo=todo)
 
-    # render_template('update.html', todo=todo)
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
